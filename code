@@ -1,0 +1,11 @@
+#Support Vector Machine
+
+install.packages("e1071")
+library(e1071)
+
+
+
+iris.svm <- svm(Species ~ ., data = iris)
+
+#Let's look at our prediction
+table(iris$Species, predict (iris.svm, iris, type = "class"))
